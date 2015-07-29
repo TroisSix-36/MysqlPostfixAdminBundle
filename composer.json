@@ -12,5 +12,8 @@
             "name": "Rémi Garcia",
             "email": "remi.garcia.pro@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": { "TroisSix\\MysqlPostfixBundle\\": "" }
+    }
 }
