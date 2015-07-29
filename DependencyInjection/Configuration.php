@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('trois_six_mysql_postfix');
+        $rootNode = $treeBuilder->root('trois_six_mysql_postfix_admin');
 
         $rootNode
             ->children()

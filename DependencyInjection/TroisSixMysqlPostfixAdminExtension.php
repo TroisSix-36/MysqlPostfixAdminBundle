@@ -47,7 +47,7 @@ class TroisSixMysqlPostfixAdminExtension extends Extension
         ;
 
         $container->setDefinition('mysql_postfix', new Definition(
-            'TroisSix\MysqlPostfixAdminBundle\Service\MysqlPostfixService',
+            'TroisSix\MysqlPostfixAdminBundle\Service\MysqlPostfixAdminService',
             [ new Reference('mysql_postfix_em') ]
         ));
 
