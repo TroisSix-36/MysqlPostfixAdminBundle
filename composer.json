@@ -1,0 +1,16 @@
+{
+    "name": "trois-six/mysql-postfix-admin-bundle",
+    "description": "Symfony 2 bundle that helps you manage Postfix Admin MySQL tables",
+    "type": "symfony-bundle",
+    "require": {
+        "doctrine/orm": "~2.2,>=2.2.3,<2.5",
+        "symfony/symfony": "2.6.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rémi Garcia",
+            "email": "remi.garcia.pro@gmail.com"
+        }
+    ]
+}
