@@ -1,4 +1,4 @@
-TroisSix\MysqlPostfixBundle
+TroisSix\MysqlPostfixAdminBundle
 ========================================
 
 Helps you manage Postfix Admin MySQL tables.
@@ -23,7 +23,7 @@ Configuration
 public function registerBundles()
 {
     ...
-    new TroisSix\MysqlPostfixBundle\TroisSixMysqlPostfixBundle(),
+    new TroisSix\MysqlPostfixAdminBundle\TroisSixMysqlPostfixAdminBundle(),
     ...
 }
 ```

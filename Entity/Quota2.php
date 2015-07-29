@@ -1,6 +1,6 @@
 <?php
 
-namespace TroisSix\MysqlPostfixBundle\Entity;
+namespace TroisSix\MysqlPostfixAdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

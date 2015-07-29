@@ -1,10 +1,10 @@
 <?php
 
-namespace TroisSix\MysqlPostfixBundle\Service;
+namespace TroisSix\MysqlPostfixAdminBundle\Service;
 
 use Doctrine\ORM\EntityManager;
 
-class MysqlPostfixService
+class MysqlPostfixAdminService
 {
     /**
      * @var EntityManager

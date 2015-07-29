@@ -1,6 +1,6 @@
 <?php
 
-namespace TroisSix\MysqlPostfixBundle\DependencyInjection;
+namespace TroisSix\MysqlPostfixAdminBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

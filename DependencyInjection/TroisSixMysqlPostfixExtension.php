@@ -1,6 +1,6 @@
 <?php
 
-namespace TroisSix\MysqlPostfixBundle\DependencyInjection;
+namespace TroisSix\MysqlPostfixAdminBundle\DependencyInjection;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Setup;
@@ -16,7 +16,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class TroisSixMysqlPostfixExtension extends Extension
+class TroisSixMysqlPostfixAdminExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -47,7 +47,7 @@ class TroisSixMysqlPostfixExtension extends Extension
         ;
 
         $container->setDefinition('mysql_postfix', new Definition(
-            'TroisSix\MysqlPostfixBundle\Service\MysqlPostfixService',
+            'TroisSix\MysqlPostfixAdminBundle\Service\MysqlPostfixService',
             [ new Reference('mysql_postfix_em') ]
         ));
 
