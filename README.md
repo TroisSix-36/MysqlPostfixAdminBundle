@@ -11,7 +11,7 @@ Installation / Usage
 Install with composer :
 
 ```sh
-$ composer require trois-six/mysql-postfix-admin-bundle~1.0
+$ composer require trois-six/mysql-postfix-admin-bundle
 ```
 
 Configuration
