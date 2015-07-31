@@ -17,7 +17,6 @@ class Quota2
      *
      * @ORM\Column(name="username", type="string", length=100, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $username;
 
@@ -35,5 +34,60 @@ class Quota2
      */
     private $messages = '0';
 
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
 
+    /**
+     * @param string $username
+     *
+     * @return Quota2
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBytes()
+    {
+        return $this->bytes;
+    }
+
+    /**
+     * @param int $bytes
+     *
+     * @return Quota2
+     */
+    public function setBytes($bytes)
+    {
+        $this->bytes = $bytes;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMessages()
+    {
+        return $this->messages;
+    }
+
+    /**
+     * @param int $messages
+     *
+     * @return Quota2
+     */
+    public function setMessages($messages)
+    {
+        $this->messages = $messages;
+        return $this;
+    }
 }

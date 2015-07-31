@@ -82,7 +82,7 @@ class Fetchmail
      *
      * @ORM\Column(name="keep", type="boolean", nullable=false)
      */
-    private $keep = '0';
+    private $keep = false;
 
     /**
      * @var string
@@ -96,7 +96,7 @@ class Fetchmail
      *
      * @ORM\Column(name="usessl", type="boolean", nullable=false)
      */
-    private $usessl = '0';
+    private $usessl = false;
 
     /**
      * @var string
@@ -124,7 +124,317 @@ class Fetchmail
      *
      * @ORM\Column(name="date", type="datetime", nullable=false)
      */
-    private $date = 'CURRENT_TIMESTAMP';
+    private $date;
 
+    /**
+     * Fetchmail constructor.
+     */
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return Fetchmail
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMailbox()
+    {
+        return $this->mailbox;
+    }
+
+    /**
+     * @param string $mailbox
+     *
+     * @return Fetchmail
+     */
+    public function setMailbox($mailbox)
+    {
+        $this->mailbox = $mailbox;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSrcServer()
+    {
+        return $this->srcServer;
+    }
+
+    /**
+     * @param string $srcServer
+     *
+     * @return Fetchmail
+     */
+    public function setSrcServer($srcServer)
+    {
+        $this->srcServer = $srcServer;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSrcAuth()
+    {
+        return $this->srcAuth;
+    }
+
+    /**
+     * @param string $srcAuth
+     *
+     * @return Fetchmail
+     */
+    public function setSrcAuth($srcAuth)
+    {
+        $this->srcAuth = $srcAuth;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSrcUser()
+    {
+        return $this->srcUser;
+    }
+
+    /**
+     * @param string $srcUser
+     *
+     * @return Fetchmail
+     */
+    public function setSrcUser($srcUser)
+    {
+        $this->srcUser = $srcUser;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSrcPassword()
+    {
+        return $this->srcPassword;
+    }
+
+    /**
+     * @param string $srcPassword
+     *
+     * @return Fetchmail
+     */
+    public function setSrcPassword($srcPassword)
+    {
+        $this->srcPassword = $srcPassword;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSrcFolder()
+    {
+        return $this->srcFolder;
+    }
+
+    /**
+     * @param string $srcFolder
+     *
+     * @return Fetchmail
+     */
+    public function setSrcFolder($srcFolder)
+    {
+        $this->srcFolder = $srcFolder;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPollTime()
+    {
+        return $this->pollTime;
+    }
+
+    /**
+     * @param int $pollTime
+     *
+     * @return Fetchmail
+     */
+    public function setPollTime($pollTime)
+    {
+        $this->pollTime = $pollTime;
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isFetchall()
+    {
+        return $this->fetchall;
+    }
+
+    /**
+     * @param boolean $fetchall
+     *
+     * @return Fetchmail
+     */
+    public function setFetchall($fetchall)
+    {
+        $this->fetchall = $fetchall;
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isKeep()
+    {
+        return $this->keep;
+    }
+
+    /**
+     * @param boolean $keep
+     *
+     * @return Fetchmail
+     */
+    public function setKeep($keep)
+    {
+        $this->keep = $keep;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProtocol()
+    {
+        return $this->protocol;
+    }
+
+    /**
+     * @param string $protocol
+     *
+     * @return Fetchmail
+     */
+    public function setProtocol($protocol)
+    {
+        $this->protocol = $protocol;
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isUsessl()
+    {
+        return $this->usessl;
+    }
+
+    /**
+     * @param boolean $usessl
+     *
+     * @return Fetchmail
+     */
+    public function setUsessl($usessl)
+    {
+        $this->usessl = $usessl;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExtraOptions()
+    {
+        return $this->extraOptions;
+    }
+
+    /**
+     * @param string $extraOptions
+     *
+     * @return Fetchmail
+     */
+    public function setExtraOptions($extraOptions)
+    {
+        $this->extraOptions = $extraOptions;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReturnedText()
+    {
+        return $this->returnedText;
+    }
+
+    /**
+     * @param string $returnedText
+     *
+     * @return Fetchmail
+     */
+    public function setReturnedText($returnedText)
+    {
+        $this->returnedText = $returnedText;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMda()
+    {
+        return $this->mda;
+    }
+
+    /**
+     * @param string $mda
+     *
+     * @return Fetchmail
+     */
+    public function setMda($mda)
+    {
+        $this->mda = $mda;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param \DateTime $date
+     *
+     * @return Fetchmail
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+        return $this;
+    }
 }

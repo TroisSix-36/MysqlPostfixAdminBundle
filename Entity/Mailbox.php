@@ -17,7 +17,6 @@ class Mailbox
      *
      * @ORM\Column(name="username", type="string", length=255, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $username;
 
@@ -68,21 +67,218 @@ class Mailbox
      *
      * @ORM\Column(name="created", type="datetime", nullable=false)
      */
-    private $created = '0000-00-00 00:00:00';
+    private $created;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="modified", type="datetime", nullable=false)
      */
-    private $modified = '0000-00-00 00:00:00';
+    private $modified;
 
     /**
      * @var boolean
      *
      * @ORM\Column(name="active", type="boolean", nullable=false)
      */
-    private $active = '1';
+    private $active = true;
 
+    /**
+     * Mailbox constructor.
+     */
+    public function __construct()
+    {
+        $this->created = new \DateTime();
+        $this->modified = new \DateTime();
+    }
 
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param string $username
+     *
+     * @return Mailbox
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     *
+     * @return Mailbox
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return Mailbox
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMaildir()
+    {
+        return $this->maildir;
+    }
+
+    /**
+     * @param string $maildir
+     *
+     * @return Mailbox
+     */
+    public function setMaildir($maildir)
+    {
+        $this->maildir = $maildir;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getQuota()
+    {
+        return $this->quota;
+    }
+
+    /**
+     * @param int $quota
+     *
+     * @return Mailbox
+     */
+    public function setQuota($quota)
+    {
+        $this->quota = $quota;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocalPart()
+    {
+        return $this->localPart;
+    }
+
+    /**
+     * @param string $localPart
+     *
+     * @return Mailbox
+     */
+    public function setLocalPart($localPart)
+    {
+        $this->localPart = $localPart;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDomain()
+    {
+        return $this->domain;
+    }
+
+    /**
+     * @param string $domain
+     *
+     * @return Mailbox
+     */
+    public function setDomain($domain)
+    {
+        $this->domain = $domain;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * @param \DateTime $created
+     *
+     * @return Mailbox
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getModified()
+    {
+        return $this->modified;
+    }
+
+    /**
+     * @param \DateTime $modified
+     *
+     * @return Mailbox
+     */
+    public function setModified($modified)
+    {
+        $this->modified = $modified;
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param boolean $active
+     *
+     * @return Mailbox
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+        return $this;
+    }
 }
