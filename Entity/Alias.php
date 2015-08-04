@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Alias
  *
  * @ORM\Table(name="alias", indexes={@ORM\Index(name="domain", columns={"domain"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="TroisSix\MysqlPostfixAdminBundle\Repository\AliasRepository")
  */
 class Alias
 {
